@@ -7,8 +7,9 @@
 </head>
 <body>
     <h1>Task</h1>
-    <form>
-        <input type="text" name="task">
+    <form action="{% url "add" %}" method="post">
+        {% csrf_token %}
+        {{ form }}
         <input type="submit">
     </form>
     <a href="{% url "index" %}">View task</a>
