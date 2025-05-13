@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+
+{% block page_title %}
+     l'ajout des taches
+{% endblock %}
+
+
+{% block content %}
+<h1>Task</h1>
+   <form action="{% url "add" %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="task">
+    <input type="submit">
+   </form>
+   <a href="{% url "index" %}">View Task</a>
+{% endblock %}
