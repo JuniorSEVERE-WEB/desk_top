@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+
+{% block page_title %}
+    delete page
+{% endblock %}
+
+
+{%  block content %}
+    <h1>Supprimer?</h1>
+
+    <p>voulez vous vraiment supprimer <strong>{{ task }}</strong>dans votre liste</p>
+    
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Oui suprimer</button>
+        <a href="{% url "index" %}">Annuler</a>
+    </form>
+{% endblock %}

@@ -8,7 +8,10 @@
 
 {% block content %}
     {% for task in tasks  %}
-        <li>{{ task }}</li>
+        <li>{{ task }}
+            <a href="{% url "delete" forloop.counter0 %}">Supprimer</a>
+        </li>
+        
     {% endfor %}
     <a href="{% url "add" %}">Add new task</a>
-{% endblock %}
+{% endblock %}  
