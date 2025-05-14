@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+   Suppression d'un des taches 
+{% endblock %}
+
+{% block content %}
+   <h1>Supprimer</h1>
+
+   <p>Voulez vous vraiment supprimer <strong>{{ task }}</strong> dans la liste des taches</p>
+   <form method="post">
+       {% csrf_token %}
+       <button type="submit">Oui, supprimer</button>
+       <a href="{% url "index" %}">Annuler</a>
+   </form>
+{% endblock %}
+    
+    
