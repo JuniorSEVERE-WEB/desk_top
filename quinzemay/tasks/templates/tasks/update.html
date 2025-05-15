@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+
+{% block page_title %}
+    Update
+{% endblock %}
+
+{% block content %}
+   <h1>Update </h1>
+
+   <form action="{% url "update" task_id %}" method="post">
+       {% csrf_token %}
+       {{ form }}
+       <button type="submit">Save</button>
+       <a href="{% url "index" %}">Annuler</a>
+   </form>
+  
+{% endblock %}

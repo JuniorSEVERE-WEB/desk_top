@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+
+{% block page_title %}
+    Les taches
+{% endblock %}
+
+
+{% block content %}
+    {% for task in tasks %}
+        <li>{{ task }}
+            <a href="{% url "delete" task_id=forloop.counter0 %}">Supprimer</a>
+            <a href="{% url "update" task_id=forloop.counter0 %}">Update</a>
+        </li>
+    {% endfor %}
+    <a href="{% url "add" %}">Add new task</a>
+{% endblock %}
