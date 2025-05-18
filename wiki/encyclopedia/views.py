@@ -9,10 +9,17 @@ def convert_md_to_html(title):
     if content == None:
         return None 
     else:
-        markdowner.convert(content)
+        return markdowner.convert(content)
 
 def index(request):
     return render(request, "encyclopedia/index.html", {
         "entries": util.list_entries()
     })
+    
+def entry(request, title):
+    html_content = convert_md_to_html(title)  
+    if html_content == None:
+        return render(request, "encyclopedia/error.html")
+    else:
+        return render(request, "encyclopedia/entry.html")
 
