@@ -11,4 +11,4 @@ urlpatterns = [
     path("save_edit/", views.save_edit, name="save_edit"),
     path("rand/", views.rand, name="rand")
 ]
-#
+######
