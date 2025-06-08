@@ -16,7 +16,7 @@ def index(request):
         "total_number_of_books": num_books,
         "average_rating": avg_rating
     })
-    #juniorssssssss
+    
 def book_detail(request, slug): 
     #try:
         #book = Book.objects.get(pk=id)
