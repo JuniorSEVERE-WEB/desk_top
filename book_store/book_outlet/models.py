@@ -1,5 +1,5 @@
 from django.db import models
-from django.core.validators import MinLengthValidator, MaxValueValidator
+from django.core.validators import MinValueValidator, MaxValueValidator
 from django.urls import reverse
 from django.utils.text import slugify
 
@@ -7,7 +7,10 @@ from django.utils.text import slugify
 class Book(models.Model):
     title = models.CharField(max_length=50)
     rating = models.IntegerField(
-        validators=[MinLengthValidator(1), MaxValueValidator(5)])
+            validators=[
+            MinValueValidator(1),  # ✅ Validation numérique
+            MaxValueValidator(5)
+        ])
     authors = models.CharField(null=True, max_length=100)
     is_bestselling = models.BooleanField(default=False)
     slug = models.SlugField(default="", null=False,db_index=True) 
