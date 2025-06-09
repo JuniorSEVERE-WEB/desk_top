@@ -13,7 +13,7 @@ class Book(models.Model):
         ])
     authors = models.CharField(null=True, max_length=100)
     is_bestselling = models.BooleanField(default=False)
-    slug = models.SlugField(default="", blank=True, editable=False, null=False,db_index=True) 
+    slug = models.SlugField(default="", blank=True, null=False,db_index=True) 
     
     
     def get_absolute_url(self):
