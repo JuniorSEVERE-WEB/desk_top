@@ -22,7 +22,7 @@
       <div class="carousel-item {% if forloop.first %}active{% endif %}" data-bs-interval="10000">
         <img src="{{item.image.url}}" class="d-block w-100" alt="..."style="max-height:1000px">
         <div class="carousel-caption d-none d-md-block">
-          <h5 style="text-decoration:none; color:white">{{item.title}}</h5>
+          <h5 style="text-decoration:none; color:white"><a href="{% url "detail" item.pk %}">{{item.title}}</a></h5>
           <p style="color:white">{{item.description}}</p>
         </div>
       </div>
@@ -79,7 +79,7 @@
   
   
               <!-- Read more link -->
-              <a href="" class="btn btn-primary mt-2">Read more</a>
+              <a href="{% url "detail" item.pk %}" class="btn btn-primary mt-2">Read more</a>
             </div>
           </div>
         </div>

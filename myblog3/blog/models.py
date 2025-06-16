@@ -1,12 +1,14 @@
 from django.db import models
 from django.conf import settings 
+from ckeditor.fields import RichTextField
+
 
 # Create your models here.
 
 class Blog(models.Model):
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=300)
-    content = models.TextField()
+    content = RichTextField()
     image = models.ImageField(upload_to='blog_images/', blank=True, null =True)
     date = models.DateTimeField(auto_now_add=True)
     

@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from .models import Blog, Comment 
+from django.shortcuts import get_object_or_404
+
 # Create your views here.
 def blog_list(request):
     posts = Blog.objects.all()
@@ -9,5 +11,9 @@ def blog_list(request):
         "carousel": carousel
     })
 
-def blog_detail(request):
-    return render(request, "detail.html")
+def blog_detail(request, pk):
+    post = get_object_or_404(Blog, pk=pk)
+    return render(request, "detail.html", {
+        "post": post
+
+    })
