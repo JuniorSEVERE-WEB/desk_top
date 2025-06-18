@@ -8,6 +8,15 @@
     border-radius: 5px;
     cursor: pointer;
     margin-right: 10px;
+    transition: opacity 0.10s;
+}
+#subscribe:hover
+{
+    opacity: 0.8;
+}
+#subscribe:active
+{
+    opacity: 0.4;
 }
 #join 
 {
@@ -20,6 +29,17 @@
     width: 62px;
     border-radius: 2px;
     margin-right: 10px;
+    transition: background-color 1s,
+                color 1s;
+}
+#join:hover
+{
+    background-color: rgb(56, 56, 207);
+    color:#fff;
+}
+#join:active
+{
+    opacity: 0.7;
 }
 #twitter
 {
@@ -31,4 +51,10 @@
     border: none;
     font-weight:bold;
     font-size: 15px;
+    cursor: pointer;
+    transition: box-shadow 0.15s;
+}
+#twitter:hover 
+{
+     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
 }
