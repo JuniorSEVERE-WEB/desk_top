@@ -19,11 +19,12 @@
               </p>
 
               <!-- Like Button (Without AJAX) -->
-              <form method="POST" action="">
+              <form method="POST" action="{% url "like" post.pk %}">
+                 {% csrf_token %}
                 <button type="submit" class="btn btn-outline-danger">
                   <i class="fa fa-heart"></i> Like
                 </button>
-                <span>2</span> Likes
+                <span>{{post.likes}}</span> Likes
               </form>
 
               <!-- Comment Count -->

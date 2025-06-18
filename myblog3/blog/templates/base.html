@@ -22,8 +22,9 @@
     <!-- Navber -->
         <nav class="navbar navbar-light bg-dark">
             <div class="container-fluid">
-            <a class="navbar-brand mb-0 h1" href="" style="color: white"> DatBlog</a>
-            <form class="d-flex" action="">
+            <a class="navbar-brand mb-0 h1" href="{% url "list" %}" style="color: white"> DatBlog</a>
+            <form class="d-flex" action="{% url "search" %}">
+              {% csrf_token %}
                 <input
                 class="form-control me-2"
                 type="search"

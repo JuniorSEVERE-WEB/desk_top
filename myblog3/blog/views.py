@@ -36,3 +36,18 @@ def blog_detail(request, pk):
 
 
     })
+
+def post_like(request, pk):
+    post = get_object_or_404(Blog, pk=pk)
+    post.likes += 1
+    post.save()
+    return redirect("detail", pk=pk)
+
+def search(request):
+    query = request.GET.get("q", "")
+    results = Blog.objects.filter(title__icontains=query)
+
+    return render(request, "search.html", {
+        "query": query, 
+        "results": results
+        })
