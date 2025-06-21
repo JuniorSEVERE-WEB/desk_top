@@ -7,10 +7,11 @@
 </head>
 <body>
     <div>
-        <div>image</div>
+        {% for item in posts %}
+        <div>{{item.image}}</div>
         <div>
-            <div>Title:CS50: The Gateway to modern computer science</div>
-            <div>Exploreeeeeeeeeeeeeeeeeeeeeeeee</div>
+            <div>Title:{{image.title}}</div>
+            <div>{{item.description}}</div>
             <div>
                 <button>Like</button>
                 <p>0 likes</p>
@@ -18,6 +19,7 @@
             </div>
             <button>Read more</button>
         </div>
+        {% endfor %}
     </div>
 </body>
 </html>
