@@ -1,0 +1,19 @@
+.div1 
+{
+    background-color: lightblue;
+}
+.div2
+{
+    background-color: lightpink;
+}
+.div1and2
+{
+  display: grid;
+  grid-template-columns: 100px 100px;
+}
+.div1and22
+{
+  display: grid;
+  grid-template-columns: 100px 100px;
+  margin-top: 20px;
+}
