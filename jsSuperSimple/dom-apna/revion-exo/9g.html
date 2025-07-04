@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input placeholder="Enter a number" class="js-input" onkeydown="taperEnter();">
+    <button onclick="calculateTotal();">Calculate</button>
+    <p class="js-para"></p>
+
+
+    <script>
+        function taperEnter()
+        {
+            if (event.key === 'Enter')
+        {
+            calculateTotal();
+        }
+        }
+        function calculateTotal()
+        {
+            const inputElement = document.querySelector('.js-input');
+            let valueInput = Number(inputElement.value * 100);
+            if ( valueInput < 4000 )
+            {
+                valueInput += 1000;
+            }
+            document.querySelector('.js-para').innerHTML = `$${valueInput / 100}`;
+
+        }
+    </script>
+</body>
+</html>

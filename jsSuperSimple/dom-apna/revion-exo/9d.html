@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9c</title>
+</head>
+<body>
+    <input class="js-input" onkeydown="toucherEnter(event);">
+    <button onclick="
+     afficherName();
+    ">Submit</button>
+    <p class="js-para"></p>
+
+
+    <script>
+        function toucherEnter(event)
+        {
+            if (event.key === 'Enter')
+            {
+                afficherName();
+            }
+        }
+        function afficherName()
+        {
+            let inputElement = document.querySelector('.js-input');
+            const valueInput = inputElement.value;
+            document.querySelector('.js-para').innerHTML = `My name is ${valueInput}`;
+        }
+        
+    </script>
+</body>
+
+</html>
