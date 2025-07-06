@@ -9,13 +9,15 @@
     
 
     <script>
-        const product = 
+        function getLastValue(array)
         {
-            name: 'baskeball',
-            price: 2095
+            const lastIndex = array.length - 1;
+            return array[lastIndex];
         }
-        console.log(product);
+        console.log(getLastValue([1, 20, 22, 24, 5]));
+        console.log(getLastValue(['hi', 'hello', 'hey']));
         
+
     </script>
 </body>
 </html>
