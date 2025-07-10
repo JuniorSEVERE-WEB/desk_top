@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+</head>
+<body>
+    <input placeholder="Todo name" class="js-input-name">
+    <button class="js-add-button">Add</button>
+    
+    <div class="js-todo-list-display">
+        </div>
+
+    <script>
+        const todoList = [];
+
+        // Get references to the HTML elements
+        const inputNameElement = document.querySelector('.js-input-name');
+        const addButtonElement = document.querySelector('.js-add-button');
+        const todoListDisplayElement = document.querySelector('.js-todo-list-display');
+
+        function addTodo() {
+            // Get the current value from the input field when the button is clicked
+            const name = inputNameElement.value;
+
+            // Check if the input is not empty before adding
+            if (name.trim() !== '') {
+                // Add the name to the todoList array
+                todoList.push(name);
+
+                // Clear the input field after adding
+                inputNameElement.value = '';
+
+                // Display in the console
+                console.log(todoList);
+
+                // Display on the web page
+                renderTodoList();
+            }
+        }
+
+        function renderTodoList() {
+            let todoListHTML = '';
+            todoList.forEach(function(todoName) {
+                todoListHTML += `<p>${todoName}</p>`;
+            });
+            todoListDisplayElement.innerHTML = todoListHTML;
+        }
+
+        // Attach the event listener to the Add button
+        addButtonElement.addEventListener('click', addTodo);
+    </script>
+    
+</body>
+</html>

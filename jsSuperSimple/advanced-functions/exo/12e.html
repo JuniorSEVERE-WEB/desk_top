@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="js-button" onclick="appearText()">Add to cart</button>
+    <p class="js-para"></p>
+    
+
+
+
+    <script>
+        function appearText()
+        {
+            //const buttonText = document.querySelector('.js-button');
+            setTimeout(function() {
+            const textPara = document.querySelector('.js-para');
+            textPara.innerHTML = 'Added';
+
+            }, 1000)
+        }
+
+
+    </script>
+</body>
+</html>
