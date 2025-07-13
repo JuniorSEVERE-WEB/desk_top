@@ -1,10 +1,25 @@
-function one(call_two) {
-    console.log("Step 1 complete. Please call step 2");
-    call_two() 
+let order = (call_production)=>{
+    console.log("order placed, please call production");
+    call_production();
 }
 
-function two() {
-    console.log("Step 2");
-}
 
-one(two);
+let production = ()=>{
+    console.log("order receive, starting productionz");
+    
+}
+order(production);
+
+
+
+/*let order = (call_production)=> {
+    console.log("order placed, please call production");
+    call_production()
+};
+
+let production = ()=>{
+    console.log("order receive, starting production")
+};
+
+order(production);
+*/
