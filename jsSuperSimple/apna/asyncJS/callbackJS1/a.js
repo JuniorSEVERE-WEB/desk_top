@@ -10,9 +10,9 @@ let stocks = {
 let order = (Fruit_name, call_production)=>{
     setTimeout(()=>{
         console.log(`${stocks.Fuits[Fruit_name]} was selected`);
-        
+         call_production();
     },2000)
-    call_production();
+   
 };
 
 let production = ()=> {
