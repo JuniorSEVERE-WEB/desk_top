@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ton prenom:</h1>
+    <input type="text" id="nom" placeholder="Taper ton nom">
+    <button onclick="direBonjour();">Dire bonjour</button>
+    <p id="resultat"></p>
+
+
+    <script>
+        function direBonjour()
+        {
+            const nom = document.querySelector("#nom").value;
+            fetch(`/bonjour?name=${nom}`)
+                .then(response=>response.json())
+                .then(data =>{
+                    document.querySelector("#resultat").innerText = data.message;
+                });
+        }
+    </script>
+</body>
+</html>
