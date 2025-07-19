@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django + javascript</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static "core/style.css" %}">
+</head>
+<body>
+    <h1>Integration Django + Javascript</h1>
+    <button onclick="loadMessage()">Afficher un message serveur</button>
+
+    <div id="result"></div>
+
+
+
+    <script src="{% static "core/scripts.js" %}"></script>
+</body>
+</html>
