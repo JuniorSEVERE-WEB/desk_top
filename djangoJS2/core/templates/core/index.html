@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "core/style.css" %}">
+    <title></title>
+</head>
+<body>
+    <h1>Integration Django + Javascript</h1>
+    <button class="button-display" type="submit" onclick="displayMessage();">Display message</button>
+
+    <p class="para"></p>
+
+    <script src="{% static "core/script.js" %}"></script>
+</body>
+</html>
