@@ -18,22 +18,70 @@
         {
             return (
                 <>
-                    <input />
+                    <input 
+                      placeholder="Send a message to Chatbot" 
+                      size="30" 
+                    />
                     <button>Send</button>
                 </>
             );
         }
 
-        const app = (
+        function ChatMessage({message, sender})
+        {
+          // const sender = props.sender
+          //const message = props.message;
+          //const {sender, message} = props;
+
+
+          /*
+          if(sender === "robot")
+          {
+            return (
+              <div>
+                <img src="images/robot.png" width="50"/>
+                {message}
+            </div>
+            );
+          }
+            */
+
+          return (
+              <div>
+                {sender === "robot" && (
+                  <img src="images/robot.png" width="50"/>
+                )}
+                {message}
+
+                {sender === "user" && (
+                  <img src="images/user.png" width="50"/>
+                )}
+                
+              </div>
+            ); 
+        
+        }
+
+        function App()
+        {
+          return (
             <>  
                 <ChatInput />
+                <ChatMessage message="hello chatbot" sender="user"/>
+                <ChatMessage message="hello, how can i help you?" sender="robot"/>
+                <ChatMessage message="Can you get me today's date?" sender="user"/>
+                <ChatMessage message="July 28" sender="robot"/>
+                <ChatMessage message="What's the capital of France?" sender="user"/>
+                <ChatMessage message="I don't know my friend" sender="robot"/>
             </>
-        );
+          );
+        }
 
+        
         
 
       const container = document.querySelector('.js-container');
-      ReactDOM.createRoot(container).render(div);
+      ReactDOM.createRoot(container).render(<App />);
     </script>
   </body>
 </html>
