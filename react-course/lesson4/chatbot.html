@@ -6,6 +6,9 @@
       body 
       {
         font-family: Arial;
+        margin-top: 0px;
+        
+        margin-bottom: 0px;
       }
       .send-button
       {
@@ -31,6 +34,7 @@
     
       {
         display: flex;
+        margin-bottom: 60px;
        
       }
       .app-container
@@ -38,16 +42,22 @@
         max-width: 600px;
         margin-left: auto;
         margin-right: auto;
+
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
       }
       .chat-message-user
       {
         display: flex;
         justify-content: end;
+        align-items: start;
       }
       .chat-message-robot 
       {
         display: flex;
         justify-content: start;
+        align-items: start;
       }
       .chat-message-text
       {
@@ -57,7 +67,21 @@
         margin-right: 10px;
         margin-left: 10px;
         margin-bottom: 20px;
+        max-width: 300px;
       }
+      .chat-message-profile
+    
+      {
+        width:50px;
+      }
+      .chat-message-container
+      {
+        flex-grow: 1;
+        margin-top: 20px;
+        overflow: scroll;
+        scrollbar-width: none;
+      }
+
     </style>
   </head>
   <body>
@@ -142,21 +166,25 @@
             :"chat-message-robot"
           }>
             {sender === 'robot' && (
-              <img src="images/robot.png" width="50" />
+              <img src="images/robot.png" className="chat-message-profile" width="50"/>
             )}
             <div className="chat-message-text">
                 {message}
             </div>    
             {sender === 'user' && (
-              <img src="images/user.png" width="50" />
+              <img src="images/user.png" className="chat-message-user" width="50"/>
             )}
           </div>
         );
       }
 
       function ChatMessages({ chatMessages }) {
+        React.useEffect(()=>{
+          console.log("Updated");
+          
+        });
         return (
-          <>
+          <div className="chat-message-container">
             {chatMessages.map((chatMessage) => {
               return (
                 <ChatMessage
@@ -166,7 +194,7 @@
                 />
               );
             })}
-          </>
+          </div>
         );
       }
 
@@ -194,12 +222,13 @@
 
         return (
           <div class="app-container">
-            <ChatInput
-              chatMessages={chatMessages}
-              setChatMessages={setChatMessages}
-            />
+           
             <ChatMessages
               chatMessages={chatMessages}
+            />
+             <ChatInput
+              chatMessages={chatMessages}
+              setChatMessages={setChatMessages}
             />
           </div>
         );
