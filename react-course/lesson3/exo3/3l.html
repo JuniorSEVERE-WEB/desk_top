@@ -30,10 +30,11 @@
         }
 
         async function sendMessage() {
+          // We can put this at the top of the function or
+          // after the first setChatMessages(). Both work.
+          setInputText('');
+          
           const newChatMessages = [
-                      // We can put this at the top of the function or
-             // after the first setChatMessages(). Both work.
-             setInputText('');
             ...chatMessages,
             {
               message: inputText,
