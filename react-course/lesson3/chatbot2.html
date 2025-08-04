@@ -13,7 +13,7 @@
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
     <script type="text/babel">
 
-        function ChatInput({ chatMessages, setChatMessages })
+        function ChatInput(chatMessages, setChatMessages)
         {
             const [inputText, setInputText] = React.useState("")
 
@@ -48,7 +48,6 @@
                   placeholder="Type your message" 
                   size="30"
                   onChange={saveInputText}
-                  value={inputText}
                 />
                   <button onClick={sendMessage}>Send message</button>
                 </> 
@@ -92,7 +91,7 @@
                 },
                 {
                     message: "Hello",
-                    sender: "robot",
+                    ssender: "robot",
                     id: "id2"
                 }]);
             return (
