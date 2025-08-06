@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Basics</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+        function BonusClicker() {
+            const clickCount = React.useRef(0); // Ne déclenche pas de re-render
+            const [message, setMessage] = React.useState(""); // Pour afficher le bonus
+
+            const handleClick = () => {
+                clickCount.current += 1;
+
+                if (clickCount.current === 5) {
+                    setMessage("🎉 Bravo ! Vous avez atteint 5 clics et gagné un bonus !");
+                    // Remise à zéro si tu veux recommencer
+                    clickCount.current = 0;
+                }
+            };
+
+            return (
+                <div style={{ padding: "20px", textAlign: "center" }}>
+                    <button
+                        onClick={handleClick}
+                        style={{
+                            padding: "10px 20px",
+                            backgroundColor: "#16a34a",
+                            color: "white",
+                            border: "none",
+                            borderRadius: "5px",
+                            cursor: "pointer"
+                        }}
+                    >
+                        Cliquez pour obtenir un bonus
+                    </button>
+
+                    {message && (
+                        <p style={{ 
+                            marginTop: "15px", 
+                            fontSize: "18px", 
+                            color: "#9333ea", 
+                            fontWeight: "bold" 
+                        }}>
+                            {message}
+                        </p>
+                    )}
+                </div>
+            );
+        }
+
+        const container = document.querySelector('.js-container');
+        ReactDOM.createRoot(container).render(<BonusClicker />);
+    </script>
+  </body>
+</html>
