@@ -12,26 +12,11 @@
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
     <script type="text/babel">
 
-     function App()
-     {
-      const [time, setTime] = React.useState(
-            dayjs().format('HH:mm:ss')
-     );
+        
 
-     React.useEffect(()=>{
-        const intervalId = setInterval(()=>{
-          setTime(dayjs().format('HH:mm:ss'))
-        },1000)
-
-        return ()=>clearInterval(intervalId)
-     },[]);
-      return(
-        <p>Current time: {time}</p>
-      );
-     }
   
       const container = document.querySelector('.js-container');
-      ReactDOM.createRoot(container).render(<App />);
+      ReactDOM.createRoot(container).render("This is my first reactJS page");
     </script>
   </body>
 </html>
