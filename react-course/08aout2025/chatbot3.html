@@ -12,21 +12,23 @@
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
     <script type="text/babel">
 
-        function ProductDetails({price, name, disCountPrice})
+        function ChatInput()
         {
             return(
                 <>
-                  <p>{name}</p>
-                
-                  {disCountPrice?
-                    (<div>
-                        <p>Discount: ${disCountPrice}</p>
-                        <p><del>Price: ${price}</del></p>
-                     </div>
-
-                    ): <p>Price: ${price}</p>}
-                  <button>Add to cart</button>
+                  <input placeholder="Aks your question here..." />
+                  <button>Send message</button>
                 </>
+            );
+        }
+
+        function ChatMessage()
+        {
+            return(
+                <div>
+                    Hello chatbot!
+                    <img src="images/user.png" width="50"/>
+                </div>
             );
         }
 
@@ -34,9 +36,8 @@
         {
             return(
                 <>
-                   <ProductDetails name="T-shirt"  price="90"/>
-                   <ProductDetails name="Jeans" price="120"  />
-                   <ProductDetails name="Jeans" price="120"  disCountPrice="10"/>
+                  <ChatInput />
+                  <ChatMessage />
                 </>
             );
         }
