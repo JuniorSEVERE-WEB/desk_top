@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Basics</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+
+        function ChatInput()
+        {
+            const [inputText, setInputText] = React.useState("");
+
+            function saveInputText(event)
+            {
+                setInputText(event.target.value);
+            }
+            function EscSpace(event)
+            {
+                if (event.key === "Escape")
+                {
+                    setInputText(""); // Réinitialise le champ de saisie
+                }
+                else if (event.key === "Enter") // Si la touche "Enter" est pressée
+                {
+                    event.preventDefault(); // Empêche le comportement par défaut
+                    sendMessage(); // Envoie le message
+                }
+            }
+
+            function sendMessage()
+            {
+                // Logique pour envoyer le message
+                console.log("Message sent:", inputText);
+              //  setInputText(""); // Réinitialise le champ de saisie après l'envoi
+              const newChatMessages = [
+                ...chatMessages,
+                {
+                    message: inputText,
+                    sender: "user",
+                    id: crypto.randomUUID()
+                }
+              ];
+            
+            }
+            return(
+                <>
+                    <input 
+                      placeholder="Ask me your question" 
+                      value={inputText} onChange={saveInputText} 
+                      onKeyDown={EscSpace} 
+                    />
+                    <button>Send message</button>
+                </>
+            );
+        }
+
+        function ChatMessage({message, sender})
+        {
+            return (
+                <div>
+                    {sender === "robot" && (<img src="images/robot.png" width="50" />)}
+                    {message}
+                    {sender === "user" && (<img src="images/user.png" width="50"/>)}
+                </div>
+            );
+        }
+
+        function ChatMessages({chatMessages})
+        {
+            return (
+                <div>
+                    {chatMessages.map((chatMessage) => (
+                        <ChatMessage 
+                            key={chatMessage.id} 
+                            message={chatMessage.message} 
+                            sender={chatMessage.sender} 
+                        />
+                    ))}
+                </div>
+            );
+        }
+
+        function App()
+        {
+            const [chatMessages, setChatMessages] = React.useState([
+                {
+                    message: "Hello mr chatbot",
+                    sender: "user",
+                    id: "id1"
+                },
+                {
+                    message: "Hello user",
+                    sender: "robot",
+                    id: "id2"
+                }
+            ])
+            return (
+                <div>
+                  <ChatInput />
+                  <ChatMessage message="Hello chatbot" sender="user"/>
+                  <ChatMessage message="Hello user" sender="robot"/>
+                </div>
+            );
+        }
+
+  
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(<App />);
+    </script>
+  </body>
+</html>

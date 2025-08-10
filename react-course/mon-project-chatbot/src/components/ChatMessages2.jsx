@@ -5,8 +5,6 @@ export function ChatMessages2({ chatMessages })
 {
   const chatMessagesRef = useRef(null);
 
-  
-
   useEffect(()=>{
     const containerElm = chatMessagesRef.current;
     if(containerElm)
