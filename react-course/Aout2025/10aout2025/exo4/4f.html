@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Basics</title>
+    <script src="https://unpkg.com/dayjs@1.11.10/dayjs.min.js"></script>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+
+    function Hour()
+    {
+        const [time, setTime] = React.useState(
+            dayjs().format('HH:mm:ss')
+        )
+
+        React.useEffect(()=>{
+            const intervalId = setInterval(()=>{
+                setTime(dayjs().format('HH:mm:ss'))
+            },1000);
+
+            return()=>clearInterval(intervalId);
+        },[])
+
+        return(
+      <div>
+        <h2>Heure en Haiti</h2>
+        <p>{time}</p>
+      </div>
+        );
+    }
+
+    const container = document.querySelector('.js-container');
+    ReactDOM.createRoot(container).render(<Hour />);
+    </script>
+  </body>
+</html>

@@ -1,8 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <title>React Basics</title>
-  <script src="https://unpkg.com/dayjs@1.11.10/dayjs.min.js"></script>
+    <title>React Basics</title>
+    <style>
+        .on-button
+        {
+            background-color: green;
+            color: white;
+            padding: 8px;
+            border-radius: 5px;
+            border: none;
+        }
+    </style>
   </head>
   <body>
     <div class="js-container"></div>
@@ -14,25 +23,13 @@
     <script type="text/babel">
 
         function App()
-    {
-      const [time, setTime] = React.useState(dayjs().format('HH:mm:ss'));
-
-      React.useEffect(() => {
-        const interval = setInterval(() => {
-          setTime(dayjs().format('HH:mm:ss'));
-        }, 1000);
-        return () => clearInterval(interval);
-      }, []);
-
-      return (
-        <div>
-          <h2>Horloge React</h2>
-          <p>{time}</p>
-        </div>
-      );
-    }
-
-
+        {
+            return(
+                <div>
+                    <button className="on-button">On</button>
+                </div>
+            );
+        }
 
   
       const container = document.querySelector('.js-container');
