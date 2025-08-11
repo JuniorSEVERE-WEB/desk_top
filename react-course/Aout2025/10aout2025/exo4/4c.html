@@ -3,14 +3,17 @@
   <head>
     <title>React Basics</title>
     <style>
-        .on-button 
+        .on-button,
+        .off-button
         {
-            background-color: green;
             color: white;
             padding: 8px;
             border:none;
             border-radius: 5px;
         }
+
+        .on-button{background-color: green;}
+        .off-button{background-color: red;}
     </style>
   </head>
   <body>
@@ -38,7 +41,7 @@
             return(
                 <div>
                     <button 
-                     className="on-button"
+                     className={isButtonOn?"off-button":"on-button"}
                      onClick={OnOff}
                      >{isButtonOn ? "On" : "Off"}</button>
                 </div>
