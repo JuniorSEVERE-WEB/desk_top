@@ -1,0 +1,129 @@
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.header
+{
+    height: 70px;
+    border-bottom: 1px solid rgb(214, 213, 213);
+    justify-content: space-around;
+    padding: 0 5%;
+    background-color: rgb(1, 1, 32);
+    align-items: center;
+    display: flex;
+    
+    
+}
+.left-section 
+{
+    display: flex;
+    align-items: center;
+}
+.left-section p 
+{
+    color: white;
+}
+
+
+/*-------------------------middle-section-----------------------------*/
+.middle-section 
+{
+    display: flex;
+    align-items: center;
+}
+.middle-section ul 
+{
+    display: flex;
+    gap:30px;
+    align-items: center;
+}
+.middle-section ul li a 
+{
+    list-style: none;
+    color: white;
+    text-decoration: none;
+}
+.middle-section ul li a:hover 
+{
+    color: rgb(84, 84, 233);
+}
+
+/*-------------------right-section------------*/
+.right-section,
+.menu-con
+{
+    display: none;
+}
+
+
+/*-----------------------------------MOBILE-RESPONSIVE----------------------*/
+@media(max-width:767px)
+{
+    .header 
+    {
+        padding: 0 15px;
+        justify-content: space-between;
+        
+    }
+    .middle-section
+    {
+        display: none;
+    }
+
+    .right-section,
+    .menu-icon
+    {
+        display: block;
+        font-size: 1.5rem;
+    }
+    
+    .menu-icon
+    {
+        display: block;
+        font-size: 1.5rem;
+        color: white;
+    }
+
+
+
+    /*make appear middle-section on mobile*/
+    
+    .middle-section.show-menu
+    {
+        position: absolute;
+        top:70px;
+        left:0;
+        right:0;
+        background-color: rgb(1, 1, 32);
+        color: white;
+        display: flex !important;
+        flex-direction: column;
+        padding: 10px 0;
+        
+       
+    
+    }
+    .middle-section.show-menu ul 
+    {
+        
+        flex-direction: column;
+        gap:40px;
+        
+    }
+    .middle-section.show-menu ul li 
+    {
+        list-style: none;
+        width: 100%;
+        float: left;
+    }
+    .middle-section.show-menu ul li a
+    {
+        
+        display: block;
+        
+    }
+}
+
