@@ -1,0 +1,241 @@
+/* Affichage conditionnel du bouton Deconnexion selon la version */
+.mobile-only {
+    display: none;
+}
+.desktop-only {
+    display: inline-block;
+}
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.3);
+    z-index: 100;
+}
+.header 
+{
+    display: flex;
+    flex-direction: row;
+    padding: 0 5%;
+    height: 70px;
+    border-bottom: 1px solid rgb(185, 182, 182);
+    align-items: center;
+    justify-content: space-around;
+    font-weight: bold;
+    font-size: 18px;
+}
+.left-section 
+{
+    display: flex;
+    
+}
+.left-section ul {
+    padding: 0;
+    margin: 0;
+}
+.left-section ul li
+{
+  
+  font-size: 20px;
+  list-style: none;
+}
+.left-section ul li a 
+{
+    text-decoration: none;
+    color: rgb(1, 1, 32);
+}
+
+
+
+.middle-section ul
+{
+    display: flex;
+    gap: 40px;
+}
+.middle-section ul li 
+{
+    list-style: none;
+}
+.middle-section ul li a 
+{
+    text-decoration: none;
+    color: rgb(1, 1, 32);
+}
+.middle-section ul li a:hover 
+{
+    color: #1659a5;
+}
+
+
+
+/*-----------------------------------RIGHT-SECTION------------------------------*/
+/* Correction du padding et de la syntaxe pour aligner le logo et le menu mobile */
+.right-section ul li 
+{
+    list-style: none;
+}
+
+.right-section ul .deconnexion 
+{
+    font-weight: bold;
+}
+.right-section ul .deconnexion a 
+{
+  color: rgb(1, 1, 32);
+}
+.right-section ul .deconnexion a:hover 
+{
+    color: #1659a5;
+}
+.right-section ul .menu-icon 
+{
+    display: none;
+}
+.right-section ul .deconnexion
+{
+   padding: 6px 12px;
+   border-radius: 20px;
+   border: 1px solid rgb(1, 1, 32);
+   background-color: rgb(1, 1, 32);
+   
+}
+.right-section ul .deconnexion a 
+{
+    color: #ffffff;
+    font-weight: bold;
+}
+.right-section ul .deconnexion:hover
+{
+    background-color: #ffffff;
+}
+
+/*-------------------------------------RESPONSIVE----------------------------*/
+@media(max-width:767px)
+{
+    .middle-section.menu-fade-in {
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 0.3s, transform 0.3s;
+    }
+    .middle-section.menu-fade-out {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.3s, transform 0.3s;
+    }
+    /* Animation slide pour le menu mobile */
+    .middle-section.slide-in {
+        animation: slideInMenu 0.35s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+    .middle-section.slide-out {
+        animation: slideOutMenu 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+    @keyframes slideInMenu {
+        from {
+            transform: translateX(100%);
+            opacity: 0.2;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    @keyframes slideOutMenu {
+        from {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        to {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+    }
+    .mobile-only {
+    display: inline-block !important;
+    width: auto;
+    margin: 20px 0 0 0;
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid rgb(1, 1, 32);
+    background-color: rgb(1, 1, 32);
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+        transition: background 0.2s, color 0.2s;
+    }
+    .mobile-only:hover {
+        background-color: #ffffff;
+        color: #1659a5;
+    }
+    .desktop-only {
+        display: none !important;
+    }
+    .header 
+    {
+        justify-content: space-between;
+        padding: 0 15px;
+    }
+    .middle-section 
+    {
+        display: none;
+    }
+    .deconnexion
+    {
+        display: none;
+    }
+    .menu-icon 
+    {
+        display: flex !important;
+    }
+
+    .middle-section.show-menu .menu-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+    box-sizing: border-box;
+    }
+    .middle-section.show-menu .menu-logo {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: #1659a5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .middle-section.show-menu 
+    {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 60vw;
+        height: 100vh;
+        background-color: white;
+        border: 1px solid rgb(240, 236, 236);
+        display: flex !important;
+        flex-direction: column;
+        z-index: 101;
+    }
+    .middle-section.show-menu .close-menu {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        font-size: 2rem;
+        cursor: pointer;
+        z-index: 102;
+    }
+    .middle-section.show-menu ul {
+        padding-top: 20px;
+        padding-left: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+}
