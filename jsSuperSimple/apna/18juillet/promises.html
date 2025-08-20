@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        let stocks = {
+            Fruits: ["strawberry", "grapes", "banana", "apple"],
+            liquid: ["water", "ice"],
+            holder: ["cone", "cup", "stick"],
+            toppings: ["chocolate", "peanuts"],
+            };
+
+        let isOpen = true;    
+
+        let order = (time, work)=>{
+            return new Promise((resolve, reject)=>{
+                 if(isOpen)
+                 {
+                    setTimeout(()=>{
+                       resolve(work())
+                    },time)
+                 }
+                 else 
+                 {
+                    reject("shop is closed")
+                 }
+            })
+        }
+        
+        order(2000, ()=>console.log(`${stocks.Fruits[FruitName]} was slected`))
+
+        .then(()=>{
+            return order(0, ()=>console.log("production has started"))
+        })
+
+        .then(()=>{
+            return order(2000, ()=>console.log("The fruit has been choped"))
+        })
+
+        .then(()=>{
+            return order(1000, ()=>console.log(`${stocks.liquid[0]} and ${stocks.liquid[1]} was added`))
+        })
+
+        .then(()=>{
+            return order(1000, ()=>console.log("The machine was started"))
+        })
+
+        .then(()=>{
+            return order(2000, ()=>console.log(`${stocks.liquid[1]} cream was placed on ${stocks.holder[0]}`))
+        })
+
+        .then(()=>{
+            return order(3000, ()=>console.log(`${stocks.toppings[0]} was added as toppings`))
+        })
+
+        .then(()=>{
+            return order(2000, ()=>console.log("Serve ice cream"))
+        })
+
+        .catch(()=>{
+            console.log("Customer left");
+            
+        })
+
+        .finally(()=>{
+            console.log("Day ended, shop is closed");
+        })
+
+        
+
+       
+
+
+        
+    </script>
+</body>
+</html>

@@ -9,6 +9,7 @@ export function HeaderPage() {
   return (
     <header className="header">
       <div className="left-section">
+        
         <span className="logo">Quisqueya</span>
       </div>
       <nav className={`middle-section${isMenuOpen ? ' show-menu' : ''}`}>

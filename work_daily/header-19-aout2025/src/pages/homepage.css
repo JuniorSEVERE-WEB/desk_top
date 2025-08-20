@@ -4,6 +4,10 @@ html, body
     padding: 0;
     box-sizing: border-box;
 }
+.carroussel-images-text
+{
+    width: 50vw;
+}
 .carroussel
 {
     width: 100%;
