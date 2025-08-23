@@ -1,7 +1,7 @@
 from django.urls import path  
 
 from . import views
-from .views import ProductAPIView
+from .views import ProductAPIView, ProductListAPIView, ProductListCreateAPIView,  ProductDetailAPIView
 
 urlpatterns = [
     #Étape 3 : Créer une vue API simple (JsonResponse)
@@ -19,5 +19,11 @@ urlpatterns = [
     
     #Étape 7 : DRF View & Response
     path('api/drf-product/', ProductAPIView.as_view()),
+
+    path('api/drf-product/', ProductAPIView.as_view()),
+    path('api/drf-products/', ProductListAPIView.as_view()),
+    path('api/products/', ProductListCreateAPIView.as_view()),
+    path('api/products/<int:pk>/', ProductDetailAPIView.as_view()),  # GET, PUT, PATCH, DELETE
+
 
 ]
