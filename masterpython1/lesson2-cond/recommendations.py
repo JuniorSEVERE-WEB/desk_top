@@ -14,7 +14,7 @@ def main ():
             recommend("Clock")     
 
 def recommend(game):
-    print("You might like", game .)
+    print("You might like", game)
 
 
 main()        
