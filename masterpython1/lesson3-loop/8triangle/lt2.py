@@ -11,4 +11,4 @@ def main():
     affichage = triangle_left(input_size)
     print(affichage)
 
-main()    
+main()    #ee
