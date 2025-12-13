@@ -1,17 +1,25 @@
+
 def make_division(num, deno):
     try:
-        z = num / deno
-    except ValueError:
-        print("please type only number")
+        return num / deno 
     except ZeroDivisionError:
-        print("please don't type 0 in deno")   
-    return z 
+        print("Error : you cannot divide by 0")
+        return None 
+
+def get_number(message):
+    while True:
+        try:
+            return float(input(message))
+        except ValueError:
+            print("Error: please type a valid number.")
+
 
 def main():
-    x = int(input("Enter x: "))
-    y = int(input("Enter y: "))
-    display = make_division(x, y)
-    print(display)
-        
-main()     
-#nou pral korije pwogram sa apre
+    x = get_number("Enter x: ")
+    y = get_number("Enter a y: ")
+
+    result  = make_division(x, y)
+
+    if result is not None:
+        print(f"Result: {result}")
+main()
