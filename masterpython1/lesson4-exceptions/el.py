@@ -14,3 +14,4 @@ def main():
     print(display)
         
 main()     
+#nou pral korije pwogram sa apre
