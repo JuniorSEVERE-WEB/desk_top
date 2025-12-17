@@ -5,15 +5,47 @@
 
 def table_add(n):
     for i in range(11):
-        return f"{n} + {i} = {n + i}" 
+        print(f"{n} + {i} = {n + i}")
     
 def table_mult(n):
     for i in range(11):
-        return f"{n} * {i} = {n * i}"   
+        print(f"{n} * {i} = {n * i}")   
 
 def table_minus(n):
-    for i in range(11)
-    return n - i  
+    for i in range(11):
+        print(f"{n} - {i} = {n - i}")
+    
+def table_div(n):
+    for i in range(11):
+        print(f"{n} / {i} = {n / i}")
+    
+
 
 def main():
-    ask = ask_operator("Type:  \n 1 for add  \n 2 for mult \n 3 for div  \n 4 f  ")
+    ask = int(input("Type your positive number: "))
+
+    choice = input("" \
+    "choose your table by a numero" \
+    "               1-Add" \
+    "               2-Minus" \
+    "               3-div" \
+    "               4-multi:   ")
+
+    if choice == "1":
+        table_add(ask)
+    elif choice == "2":
+        table_minus(ask)  
+    elif choice == "3":
+        table_div(ask)
+    elif choice == "4":
+        table_mult(ask)
+    else:
+        print("Invalid choice.")
+
+if __name__ == "__main__":
+    main()        
+
+              
+
+
+        
