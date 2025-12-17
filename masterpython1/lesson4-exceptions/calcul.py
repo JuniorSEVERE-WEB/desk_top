@@ -1,68 +1,64 @@
-def add(a, b):
-    return a + b
+def add(x, y):
+    return x + y 
 
-def minus(a, b):
-    return a - b
+def multi(x, y):
+    return x * y
 
-def mult(a, b):
-    return a * b
+def div(x, y):
+    if y == 0:
+        return None
+    return x / y
 
-def div(a, b):
-    if b == 0:
-        return None  # on retourne None pour dire: impossible
-    return a / b
-
+def minus(x, y):
+    return x - y 
 
 def main():
     print("=== CALCULATOR ===")
+    
+
+    
 
     while True:
-        print("\nChoose an operation:")
-        print("1 - Addition (+)")
-        print("2 - Subtraction (-)")
-        print("3 - Multiplication (*)")
-        print("4 - Division (/)")
-        print("5 - Quit")
-
-        choice = input("Your choice: ").strip()
-
+        print("Choose one in these in number: \n1-Addition \n2-Multiplication \n3-Division \n4-Minus \n5-Quit")
+        choice = input("Choose what operation you want to make: ").strip()
         if choice == "5":
             print("Goodbye!")
-            return  # STOP the main() function
-
+            return 
+        
         if choice not in ("1", "2", "3", "4"):
-            print("Invalid choice. Try again.")
-            continue  # return to the menu
+            print("oh, sorry, you have to type 1 or 2 or 3 or 4 or 5")
+            continue 
 
-        # Ask numbers (and keep asking until valid)
         while True:
             try:
-                a = float(input("Enter the first number: "))
-                b = float(input("Enter the second number: "))
+                a = float(input("Type the first number: "))
+                b = float(input("Type the second number: "))
                 break
-            except ValueError:
-                print("Please type only numbers!")
-                continue
 
-        # Compute
+            except ValueError:
+                print("Don't type a string or boolean")  
+                continue 
+
         if choice == "1":
             result = add(a, b)
-            print(f"Result: {a} + {b} = {result}")
-
         elif choice == "2":
-            result = minus(a, b)
-            print(f"Result: {a} - {b} = {result}")
-
+            result = multi(a, b)
         elif choice == "3":
-            result = mult(a, b)
-            print(f"Result: {a} * {b} = {result}")
-
-        else:  # choice == "4"
             result = div(a, b)
             if result is None:
                 print("Error: cannot divide by 0.")
-            else:
-                print(f"Result: {a} / {b} = {result}")
+                continue 
+        else:
+            result = minus(a, b)
 
 
-main()
+
+        print(f"Result : {result}")         
+
+if __name__ == "__main__":
+    main()
+
+
+
+
+              
