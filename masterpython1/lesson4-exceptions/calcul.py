@@ -27,7 +27,7 @@ def main():
         
         if choice not in ("1", "2", "3", "4"):
             print("oh, sorry, you have to type 1 or 2 or 3 or 4 or 5")
-            continue 
+            continue ####
 
         while True:
             try:
