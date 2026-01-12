@@ -7,7 +7,7 @@ HOST = "127.0.0.1"
 #Le port d'écoute. C'est comme le numéro d'appartement sur un immeuble (l'IP étant l'adresse de l'immeuble).
 PORT = 8080 
 ############
-######
+##########
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM):
 
 
