@@ -1,1 +1,2 @@
-print("hfhffh\n hghhggh\n hfhhfhf")
+def tt():
+    ...
